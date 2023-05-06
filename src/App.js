@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import  ReactDOM  from "react-dom";
+import Button from "./Button";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App(){
+    const [number,setNumber]=React.useState(0)
+   
+
+   
+  
+    
+        return(
+        <div>
+            <h1 className="titleBar"> 
+                Hello Counter
+             
+            </h1>
+            <div className="counterDisplay">
+                
+            <h1 className="counterElement">{number} </h1>
+            </div>
+                <div className="buttonHolder">
+                <button className="buttonStyle" onClick={()=>setNumber(number+1)}>Add</button>
+            <button className="buttonStyle" onClick={()=>setNumber(number-1)}>Sub</button>
+            <button  className="buttonStyle" onClick={()=> setNumber(0)} >Reset </button>
+                </div>
+        
+            
+        </div> )
 }
 
-export default App;
+ReactDOM.render(<App/>,document.getElementById("root"))
